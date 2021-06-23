@@ -1,0 +1,1 @@
+searchNodes=[{"doc":"Documentation for PracticeElixir .","ref":"PracticeElixir.html","title":"PracticeElixir","type":"module"},{"doc":"Hello world. goood bad this is markdown Examples iex&gt; PracticeElixir . hello ( ) :world","ref":"PracticeElixir.html#hello/0","title":"PracticeElixir.hello/0","type":"function"}]
