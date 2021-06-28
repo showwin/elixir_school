@@ -25,7 +25,8 @@ defmodule PracticeElixir.MixProject do
       {:phoenix_html, "~> 2.3"},
       {:cowboy, "~> 1.0", only: [:dev, :test]},
       {:slime, "~> 0.14"},
-      {:ex_doc, "~> 0.21", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.21", only: :dev, runtime: false},
+      {:png, github: "yuce/png"}  # import Erlang library from git
     ]
   end
 end
