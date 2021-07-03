@@ -27,7 +27,14 @@ defmodule PracticeElixir.MixProject do
       {:cowboy, "~> 1.0", only: [:dev, :test]},
       {:slime, "~> 0.14"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false},
-      {:png, github: "yuce/png"}  # import Erlang library from git
+      {:png, github: "yuce/png"},  # import Erlang library from git
+      # JWT lib
+      {:joken, "~> 2.0"},
+      # Recommended JSON library
+      {:jason, "~> 1.1"},
+      # HTTP Client
+      {:httpoison, "~> 1.8"},
+      {:poison, "~> 4.0"}
     ]
   end
 
