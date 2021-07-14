@@ -1,5 +1,17 @@
 """
 USAGE:
+required libs
+```
+defp deps do
+  [
+    {:joken, "~> 2.0"},
+    {:jason, "~> 1.1"},
+    {:httpoison, "~> 1.8"},
+    {:poison, "~> 4.0"}
+  ]
+end
+```
+
 $ export ZOOM_API_KEY=xxx
 $ export ZOOM_API_SECRET=yyy
 
