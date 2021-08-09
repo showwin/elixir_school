@@ -35,7 +35,9 @@ defmodule PracticeElixir.MixProject do
       {:jason, "~> 1.1"},
       # HTTP Client
       {:httpoison, "~> 1.8"},
-      {:poison, "~> 4.0"}
+      {:poison, "~> 4.0"},
+      # Redis Client
+      {:redix, "~> 1.1"}
     ]
   end
 
