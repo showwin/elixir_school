@@ -8,7 +8,7 @@ defmodule PracticeElixir.MixProject do
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      escript: escript(),
+      escript: escript()
     ]
   end
 
@@ -27,7 +27,8 @@ defmodule PracticeElixir.MixProject do
       {:cowboy, "~> 1.0", only: [:dev, :test]},
       {:slime, "~> 0.14"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false},
-      {:png, github: "yuce/png"},  # import Erlang library from git
+      # import Erlang library from git
+      {:png, github: "yuce/png"},
       # JWT lib
       {:joken, "~> 2.0"},
       # Recommended JSON library

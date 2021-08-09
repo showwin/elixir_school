@@ -26,7 +26,7 @@ catch
 end
 
 try do
-  exit "oh no!"
+  exit("oh no!")
 catch
   :exit, _ -> "exit blocked"
 end

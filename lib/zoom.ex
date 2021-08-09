@@ -37,7 +37,6 @@ defmodule Zoom.Token do
   end
 end
 
-
 defmodule Zoom.API do
   @host "https://api.zoom.us/v2"
 
@@ -51,19 +50,25 @@ defmodule Zoom.API do
   """
   def issue_meeting_url(token) do
     url = @host <> "/users/me/meetings"
-    body = Poison.encode!(%{
-      topic: "testing creating meeting",
-      type: 1, # Instant Meeting
-    })
-    headers = ["Authorization": "Bearer #{token}", "Content-Type": "application/json"]
+
+    body =
+      Poison.encode!(%{
+        topic: "testing creating meeting",
+        # Instant Meeting
+        type: 1
+      })
+
+    headers = [Authorization: "Bearer #{token}", "Content-Type": "application/json"]
 
     case HTTPoison.post(url, body, headers) do
       {:ok, %HTTPoison.Response{status_code: 201, body: body}} ->
         Poison.decode!(body)["start_url"]
+
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        IO.puts "Not found :("
+        IO.puts("Not found :(")
+
       {:error, %HTTPoison.Error{reason: reason}} ->
-        IO.inspect reason
+        IO.inspect(reason)
     end
   end
 
@@ -73,15 +78,17 @@ defmodule Zoom.API do
   """
   def get_users(token) do
     url = @host <> "/users?status=active&page_size=30&page_number=1"
-    headers = ["Authorization": "Bearer #{token}", "Content-Type": "application/json"]
+    headers = [Authorization: "Bearer #{token}", "Content-Type": "application/json"]
 
     case HTTPoison.get(url, headers) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        IO.puts body
+        IO.puts(body)
+
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        IO.puts "Not found"
+        IO.puts("Not found")
+
       {:error, %HTTPoison.Error{reason: reason}} ->
-        IO.inspect reason
+        IO.inspect(reason)
     end
   end
 
@@ -91,22 +98,27 @@ defmodule Zoom.API do
   """
   def create_user(token) do
     url = @host <> "/users"
-    body = Poison.encode!(%{
-      action: "custCreate",
-      user_info: %{
-        email: "email@exaaaaaaample.com",
-        type: 1,
-      }
-    })
-    headers = ["Authorization": "Bearer #{token}", "Content-Type": "application/json"]
+
+    body =
+      Poison.encode!(%{
+        action: "custCreate",
+        user_info: %{
+          email: "email@exaaaaaaample.com",
+          type: 1
+        }
+      })
+
+    headers = [Authorization: "Bearer #{token}", "Content-Type": "application/json"]
 
     case HTTPoison.post(url, body, headers) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        IO.puts body
+        IO.puts(body)
+
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        IO.puts "Not found :("
+        IO.puts("Not found :(")
+
       {:error, %HTTPoison.Error{reason: reason}} ->
-        IO.inspect reason
+        IO.inspect(reason)
     end
   end
 end

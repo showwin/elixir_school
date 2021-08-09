@@ -1,7 +1,6 @@
 defmodule SimpleQueue do
   use GenServer
 
-
   @doc """
   GenServer.init/1 コールバック
   """
