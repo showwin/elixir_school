@@ -15,7 +15,9 @@ defmodule PracticeElixir.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      # mod: {SimpleQueue.Application, []},
+      mod: {Chat.Application, []}
     ]
   end
 
@@ -27,6 +29,7 @@ defmodule PracticeElixir.MixProject do
       {:cowboy, "~> 1.0", only: [:dev, :test]},
       {:slime, "~> 0.14"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false},
+      {:gen_stage, "~> 1.0.0"},
       # import Erlang library from git
       {:png, github: "yuce/png"},
       # JWT lib
