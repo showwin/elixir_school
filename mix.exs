@@ -17,7 +17,8 @@ defmodule PracticeElixir.MixProject do
     [
       extra_applications: [:logger],
       # mod: {SimpleQueue.Application, []},
-      mod: {Chat.Application, []}
+      # mod: {Chat.Application, []},
+      mod: {GenstageExample.Application, []}
     ]
   end
 
